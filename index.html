@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambui</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Recuperar Senha</h1>
+    </header>
+    <hr>
+    <main>
+        <div id="form">
+            <label for="email">Seu email: </label>  <br>
+            <input id="email" type="email"> <br>
+            <input type="button" onclick="recuperarSenha()" value="Recuperar Senha">        
+        </div>
+    </main>
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+</html>

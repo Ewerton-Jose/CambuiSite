@@ -1,0 +1,35 @@
+:root {
+  --color1: #ffffff;
+  --color2: #2f2daf;
+  --color3: #ebb133;
+  --color4: #c02929;
+  --color5: #000000;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  background-color: var(--color1);
+}
+
+header {
+  margin: 100px 0px 50px 0px;
+  text-align: center;
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+}
+main #form {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+main #form input {
+  min-width: 600px;
+}/*# sourceMappingURL=index.css.map */
