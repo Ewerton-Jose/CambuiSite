@@ -32,37 +32,35 @@ function getErrorMessage(error) {
     }
 }
 
-function registro(){
-
+function registro() {
     var email = document.getElementById("email_user").value;
     var senha = document.getElementById("key_user").value;
     var nome = document.getElementById("nome").value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
-        CriarUser()
-        window.location.href = 'home.html'
-    }).cath(error => {alert(error);})
-
+    firebase.auth().createUserWithEmailAndPassword(email, senha)
+    .then(() => {
+        CriarUser();
+    })
+    .catch(error => {
+        alert(error.message);
+    });
 }
 
-function CriarUser(){
+function CriarUser() {
     const conteudo = {
-        
         nome: document.getElementById("nome").value,
         uid: firebase.auth().currentUser.uid,
         email: firebase.auth().currentUser.email,
         vip: true
-    }
+    };
 
-    
     firebase.firestore().collection("users").add(conteudo)
     .then(() => {
         console.log("adicionado com sucesso.");
-        window.location.href = "home.html";
+        window.alert("User Criado")
     })
     .catch((error) => {
         console.error("Erro ao adicionar: ", error);
         alert("Erro ao adicionar documento: " + error.message);
     });
-
 }
