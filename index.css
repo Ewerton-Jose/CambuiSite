@@ -22,14 +22,8 @@ header {
   font-family: "Times New Roman", Times, serif;
 }
 
-main {
-  max-width: 600px;
+form {
+  max-width: 400px;
   margin: auto;
-}
-main #form {
-  margin-top: 10px;
-  font-size: 1.5em;
-}
-main #form input {
-  min-width: 600px;
+  padding: 20px;
 }/*# sourceMappingURL=index.css.map */
