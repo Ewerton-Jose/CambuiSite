@@ -32,7 +32,7 @@ function getErrorMessage(error) {
     }
 }
 
-function registro() {
+function registro() { //Cria o Registro do user (ex: email/Senha)
     var email = document.getElementById("email_user").value;
     var senha = document.getElementById("key_user").value;
     var nome = document.getElementById("nome").value;
@@ -46,7 +46,7 @@ function registro() {
     });
 }
 
-function CriarUser() {
+function CriarUser() { //Cria dados do user no FB (ex: Nome, User, Pele, Vip)
     const conteudo = {
         nome: document.getElementById("nome").value,
         uid: firebase.auth().currentUser.uid,
@@ -63,4 +63,31 @@ function CriarUser() {
         console.error("Erro ao adicionar: ", error);
         alert("Erro ao adicionar documento: " + error.message);
     });
+}
+
+function logar() { //Loga na web e manda pra Unity
+    var email = window.document.getElementById("email_user").value;
+    var senha = window.document.getElementById("key_user").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, senha).then(response => {
+        localStorage.setItem("logado", "true");
+        enviarDadosParaUnity(email, senha, true);
+        window.alert("Logado");
+    }).catch(error => {
+        window.alert(error.code);
+        localStorage.setItem("logado", "false");
+        enviarDadosParaUnity(email, senha, false);
+    });
+}
+
+function enviarDadosParaUnity(email, senha, logado) {
+    var dados = {
+        email: email,
+        senha: senha,
+        logado: logado
+    };
+
+    // 'ReceberDadosDoWeb' na unity
+    // Unity WebGL para comunicação com Unity
+    SendMessage("AuthManagerObject", "ReceberDadosDoWeb", JSON.stringify(dados));
 }
