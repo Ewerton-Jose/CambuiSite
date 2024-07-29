@@ -1,3 +1,5 @@
+(function () {
+
 const firebaseConfig = {
     apiKey: "AIzaSyDmD7MJh7n8OGKEMOSR93XEwb6iTAWl8kA",
     authDomain: "arena-de-show-cambui.firebaseapp.com",
@@ -6,11 +8,12 @@ const firebaseConfig = {
     messagingSenderId: "593361110749",
     appId: "1:593361110749:web:dc560c69fd096b8aa63d34",
     measurementId: "G-GLSMLPR0J5"
-};
-
+}
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+})(); //Função anonina reforçando a segurança
 
 function recuperarSenha() {
     var email = document.getElementById("email").value;
