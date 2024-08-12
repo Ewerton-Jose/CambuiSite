@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 })(); //Função anonina reforçando a segurança
 
 function recuperarSenha() {
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("email_user").value;
     firebase.auth().sendPasswordResetEmail(email).then(() => {
         alert("Email Enviado Com Sucesso");
     }).catch(error => {
@@ -81,16 +81,4 @@ function logar() { //Loga na web e manda pra Unity
         localStorage.setItem("logado", "false");
         enviarDadosParaUnity(email, senha, false);
     });
-}
-
-function enviarDadosParaUnity(email, senha, logado) {
-    var dados = {
-        email: email,
-        senha: senha,
-        logado: logado
-    };
-
-    // 'ReceberDadosDoWeb' na unity
-    // Unity WebGL para comunicação com Unity
-    SendMessage("AuthManagerObject", "ReceberDadosDoWeb", JSON.stringify(dados));
 }

@@ -13,22 +13,17 @@
 </head>
 <body>
     <header>
-        <h1>Login</h1>
+        <h1>Recuperar Senha</h1>
     </header>
     <main>
         <form class="border center-block" action="" method="post">
+
             <div class="form-group">
-                <label for="email_user">Nome de Usuário: </label>
-                <input class="form-control" type="email" id="email_user"> <br>
-            </div>
-            <div class="form-group">
-                <label for="key_user">Senha: </label>
-                <input type="password" class="form-control" id="key_user">
-            <a style="padding-bottom: 100px;" href="register.html">Recuperar Senha</a> <br>
-            <br>
+                <label for="email_user">Email: </label>
+                <input class="form-control" maxlength="256" type="email" id="email_user"> <br>
             </div>
             
-            <button class="btn btn-primary" type="button" onclick="logar()">Login</button>
+            <button class="btn btn-primary" type="button" onclick="recuperarSenha()">Recuperar Senha</button>
             <a style="padding-left: 10px;" href="registrar.html">Criar conta</a>
         </form>
     </main>
